@@ -73,8 +73,9 @@ h2 {
 }
 
 #contact {
-	margin-top: 2rem;	
+	margin: 2rem 0 3rem 0;	
 }
+
 .contact-list {
 	display: inline-flex;
 	flex-direction: row;
