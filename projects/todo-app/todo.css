@@ -1,0 +1,118 @@
+body {
+	background: rgb(101,121,153);
+}
+
+/* Completed todos styling. */
+.completed {
+	color: rgb(101,121,153);
+	font-style: italic;
+	text-decoration: line-through;
+}
+
+#container {
+	width: 360px; /* Fixed width (for now...) */
+	margin: 100px auto; /* Center horizontally */
+
+	background: white;
+	box-shadow: 0 2px 4px #000;
+
+	font-family: 'Roboto', sans-serif; /* Google fonts */
+}
+
+.fa-plus:hover, span:hover {
+	cursor: pointer;
+}
+
+h1 {
+	margin: 0px;
+	padding: 18px 12px;
+
+	background: rgb(36,102,204);
+	color: white;
+}
+
+h1 > .fa-plus {
+	float: right; /* Place + symbol on right */
+}
+
+input {
+	box-sizing: border-box;
+	padding: 12px 9px;
+	width: 100%;
+	border: 3px solid rgba(33,81,163,0); /* Invisible border */
+
+	font-size: 20px;
+	line-height: 20px;
+	font-family: 'Roboto', sans-serif;
+	color: rgb(36,102,204);
+	background: rgb(235,235,235);
+}
+
+input:focus {
+	border: 3px solid rgb(36,102,204);
+	outline: none;
+}
+
+#inputDiv {
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+
+	/* inputDiv begins hidden */
+	display: none;
+	overflow: hidden;
+	opacity: 0;
+	max-height: 0px;
+	transition: max-height .3s ease-in-out, opacity .3s linear;
+}
+
+li {
+	list-style: none; /* No bullet points. */
+	
+	height: 40px;
+	padding: 0px 0px 0px 12px;
+
+	font-size: 18px;
+	line-height: 40px;
+}
+
+li:nth-child(2n) {
+	background: rgb(235,235,235);
+}
+
+li:hover > span {
+	width: 40px;
+	opacity: 1; /* Show delete button on hover. */
+}
+
+span {
+	display: inline-block;
+	margin: 0px auto; /* Center icon. */
+
+	float: right;
+	height: 40px;
+	width: 0px;
+	background: rgb(204,73,54);
+	color: white;
+	text-align: center;
+
+	/* span begins hidden */
+	opacity: 0;
+	transition: .3s linear;
+	/*box-shadow: -2px 0px 2px 0px rgba(0,0,0,.6);*/
+	overflow-x: hidden;
+}
+
+ul {
+	margin: 0px;
+	padding: 0px 0px;
+}
+
+
+
+
+
+
+
