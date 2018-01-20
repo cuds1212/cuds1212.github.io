@@ -13,23 +13,92 @@ body {
 #container {
 	margin: 0 auto;
 	width: 60%;
+	position: relative;
 }
 
 header {
+	position: relative;
 	margin-bottom: 2rem;
-	text-align: center;		
+	text-align: center;	
+
+	/*transition: all .5s linear;*/
+	/*transform: scale(0);*/
+}
+
+@keyframes header-zoom {
+	60% {
+		transform: scale(1.2);
+	}
+	80% {
+		transform: scale(0.9);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.main-container {
+	position: relative;
+	top: 0px;
+	opacity: 0;
+	transition: all .5s linear 4s;
+}
+
+.main-container-show {
+	top: 0px;
+	opacity: 1;
 }
 
 .title {
+	position: relative;
 	color: #042037;
 	font-size: 2.5rem;
 	margin: 3rem 0 0 0;
+
+	opacity: 0;
+	top: 35px;
+	animation: title-move .4s linear forwards;
+}
+
+@keyframes title-move {
+	0% {
+		opacity: 0;
+		top: 35px;
+	}
+	100% {
+		opacity: 1;
+		top: 0px;
+	}
 }
 
 .sub-title {
 	color: #496C89;
 	font-size: 1.1rem;
 	margin: 0;
+}
+
+.sub-title .title-1 {
+	opacity: 0;
+	animation: title-appear .4s .8s linear forwards;
+}
+
+.sub-title .title-2 {
+	opacity: 0;
+	animation: title-appear .4s 1.8s linear forwards;
+}
+
+.sub-title .title-3 {
+	opacity: 0;
+	animation: title-appear .4s 2.8s linear forwards;
+}
+
+@keyframes title-appear {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 #intro {
@@ -50,24 +119,35 @@ h2 {
 	font-size: 1.6rem;
 }
 
-.project-list {
+#code-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+#projects, #diversions {
+	flex-basis: 50%;
+	flex-grow: 1;
+}
+
+.project-list, .diversion-list {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-.project {
+.project, .diversion {
 	margin: 0 0 5px 0;
 }
 
-.project a, #email {
+.project a, #email, .diversion a {
 	color: #AA5B39;
 	font-size: 1.3rem;
 	font-weight: bold;
 	text-decoration: none;
 }
 
-.project a:hover, #email:hover {
+.project a:hover, #email:hover, .diversion a:hover {
 	border-bottom: 3px solid #803515;
 	color: #803515;
 }
@@ -91,11 +171,13 @@ h2 {
 
 i {
 	color: lightgray;
+	padding-bottom: 3px;
 }
 
 .fa-github:hover {
 	color: #6e5494;
 	border-bottom: 3px solid #6e5494;
+	/*animation: wiggle .4s linear forwards;*/
 }
 
 .fa-twitter:hover {
@@ -106,6 +188,26 @@ i {
 .fa-linkedin:hover {
 	color: #0077B5;
 	border-bottom: 3px solid #0077B5;
+}
+
+.fa-codepen:hover {
+	color: #000;
+	border-bottom: 3px solid #000;
+}
+
+@keyframes wiggle {
+	25% {
+		transform: rotate(15deg);
+	}
+	50% {
+		transform: rotate(-10deg);
+	}
+	75% {
+		transform: rotate(5deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
 }
 
 @media (max-width: 600px){
